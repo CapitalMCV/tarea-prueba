@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta y decide sobre la cotización adicional de tu vehículo.">
+    <title>Cotización adicional | Taller Don Ramiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <span class="brand-mark" aria-hidden="true">DR</span>
+        <div>
+          <p class="brand-name">Taller Mecánico Don Ramiro</p>
+          <p class="brand-tagline">Servicio claro y confiable</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="page-heading" aria-labelledby="page-title">
+        <p class="eyebrow">Autorización de reparación</p>
+        <h1 id="page-title">Cotización adicional</h1>
+        <p>Revisa los trabajos encontrados durante el servicio y confirma tu decisión.</p>
+      </section>
+
+      <article class="quote-card" aria-labelledby="quote-title">
+        <div class="quote-header">
+          <div>
+            <p class="quote-number">Cotización #CT-001</p>
+            <h2 id="quote-title">Chevrolet Spark 2018</h2>
+            <p class="vehicle-detail">Placa ABC-123 · 68.450 km</p>
+          </div>
+          <span id="status-badge" class="status status-pending">Pendiente</span>
+        </div>
+
+        <section class="quote-section" aria-labelledby="detail-title">
+          <h3 id="detail-title">Trabajos adicionales</h3>
+          <ul class="items-list">
+            <li>
+              <div>
+                <strong>Cambio de pastillas de freno delanteras</strong>
+                <span>Incluye repuestos y mano de obra</span>
+              </div>
+              <span class="item-price">$ 185.000</span>
+            </li>
+            <li>
+              <div>
+                <strong>Rectificación de discos delanteros</strong>
+                <span>Servicio para ambos discos</span>
+              </div>
+              <span class="item-price">$ 90.000</span>
+            </li>
+          </ul>
+        </section>
+
+        <div class="quote-total">
+          <span>Total de la cotización</span>
+          <strong>$ 275.000</strong>
+        </div>
+
+        <div id="result-message" class="result-message" role="status" aria-live="polite" hidden>
+          <strong id="result-title"></strong>
+          <p id="result-detail"></p>
+        </div>
+
+        <div id="quote-actions" class="quote-actions">
+          <p>Tu decisión será definitiva después de confirmarla.</p>
+          <div class="button-group">
+            <button class="button button-reject" type="button" data-decision="rechazada">
+              Rechazar cotización
+            </button>
+            <button class="button button-approve" type="button" data-decision="aprobada">
+              Aprobar cotización
+            </button>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <dialog id="confirmation-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <div class="dialog-content">
+        <p class="eyebrow">Decisión definitiva</p>
+        <h2 id="dialog-title">Confirmar decisión</h2>
+        <p id="dialog-description"></p>
+        <div class="dialog-actions">
+          <button id="cancel-decision" class="button button-secondary" type="button">Cancelar</button>
+          <button id="confirm-decision" class="button" type="button"></button>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>
